@@ -7,15 +7,36 @@
 </head>
 <body>
     
-    <ui-view></ui-view>
+  <ui-view></ui-view>
     
-    <!-- Angular -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <!-- Angular -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 
-    <!-- AngularUI Router -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+  <!-- AngularUI Router -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+    
+  <!-- FireBase -->
+  <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+  <!-- AngularFire -->
+  <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+    
+  <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+  
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAEAzCe6KGAqjIcsxND47Q0ZenfV874d7c",
+      authDomain: "bloc-it-off-fi.firebaseapp.com",
+      databaseURL: "https://bloc-it-off-fi.firebaseio.com",
+      projectId: "bloc-it-off-fi",
+      storageBucket: "bloc-it-off-fi.appspot.com",
+      messagingSenderId: "860407725579"
+    };
+  
+    firebase.initializeApp(config);
+</script>
 
-     <!-- Application Files -->
-    <script src="/scripts/app.js"></script>
+  <!-- Application Files -->
+  <script src="/scripts/app.js"></script>
 </body>
 </html>
