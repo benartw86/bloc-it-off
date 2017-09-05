@@ -1,8 +1,14 @@
 (function() {
-    function HomeCtrl() {
+    function HomeCtrl(Item) {
+      var ctrl = this;   
+        
+      ctrl.items = Item.all
     }
 
+    
+    
+    
     angular
         .module('blocitOff')
-        .controller('HomeCtrl', [HomeCtrl]);
+        .controller('HomeCtrl', ['Item', HomeCtrl]);
 })();
