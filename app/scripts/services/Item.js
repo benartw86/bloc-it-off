@@ -8,7 +8,7 @@
     Item.all = items;
     
   Item.add = function(item) {
-    items.$add(item);      
+    items.$add({name: item});      
   }; 
     
     return Item;

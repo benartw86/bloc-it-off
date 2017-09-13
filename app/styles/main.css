@@ -1,0 +1,13 @@
+h1 {
+  color: blue;    
+}
+
+.todos {
+  border: 10px solid black;    
+  font-size: 12px;
+}
+
+.items {
+  border: 1px solid black;
+  width: 319px;
+}

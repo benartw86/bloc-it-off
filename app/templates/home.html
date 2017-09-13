@@ -1,9 +1,11 @@
 <div>
   <h1>Create your list!</h1>
-    <table>
+    <table class="todos">
       <tr>
-        <td><button type="button" class="btn btn-default" ng-click="home.open(item)">Create new item!</button></td>  
+        <td><input type="text" ng-model="newMessage"/>
+        <button type="button" class="btn btn-default" ng-click="home.submit(newMessage)">Add a to do item!</button></td>
       </tr>
+      <tr><div class="items" ng-repeat="item in home.items">{{ item.name }}</div></tr>     
       <tr>
         <td><button type="button" class="btn btn-default" ng-click="home.open()">Items to do!</button></td>  
       </tr>
