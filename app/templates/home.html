@@ -1,14 +1,10 @@
 <div>
   <h1>Create your list!</h1>
-    <table>
-      <tr>
-        <td><button type="button" class="btn btn-default" ng-click="home.open(item)">Create new item!</button></td>  
-      </tr>
-      <tr>
-        <td><button type="button" class="btn btn-default" ng-click="home.open()">Items to do!</button></td>  
-      </tr>
-      <tr>
-        <td><button type="button" class="btn btn-default" ng-click="home.open()">Items finished . . .</button></td>  
-      </tr>    
-    </table>
+    <div class="todos">
+    <input type="text" ng-model="newMessage"/>
+    <button type="button" class="btn btn-default" ng-click="home.submit(newMessage)" ng-hide="item.complete">Create a new item!</button>
+    <div ng-repeat="item in home.items" ng-show="home.shouldShow(item)">  <!-- function in controller define behavior that can be used in the view here -->
+        <p >{{item.name}}</p>
+    </div>
+    </div>    
 </div>

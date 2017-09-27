@@ -12,6 +12,13 @@
                  controller: 'HomeCtrl as home',
                  templateUrl: '/templates/home.html'
              });
+         
+         $stateProvider
+           .state('pastTask', {
+                  url: '/pastTasks',
+                  controller: 'PastTaskCtrl as pastTasks',
+                  templateUrl: '/templates/pastTasks.html'
+             });
      }
      
      angular
