@@ -6,6 +6,13 @@
         Item.add(name);      
       };    
         
+      this.shouldShow = function(item) {
+        if(item.expiresAt < Date.now()) {
+          return false;    
+        }      
+          return true;
+      }    
+        
       ctrl.items = Item.all
     }
 

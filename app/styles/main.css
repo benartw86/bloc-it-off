@@ -2,12 +2,10 @@ h1 {
   color: blue;    
 }
 
-.todos {
-  border: 10px solid black;    
+.todos p {
+  border: 1px solid black;    
   font-size: 12px;
+    width: 250px;
+    margin: 0px;
 }
 
-.items {
-  border: 1px solid black;
-  width: 319px;
-}
