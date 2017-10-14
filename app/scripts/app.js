@@ -14,10 +14,10 @@
              });
          
          $stateProvider
-           .state('pastTask', {
-                  url: '/pastTasks',
-                  controller: 'PastTaskCtrl as pastTasks',
-                  templateUrl: '/templates/pastTasks.html'
+           .state('past', {
+                  url: '/past',
+                  controller: 'PastTaskCtrl as past',
+                  templateUrl: '/templates/past.html'
              });
      }
      

@@ -16,6 +16,18 @@
         expiresAt: Date.now() + expirationTime         
       });      
     }; 
+      
+    Item.expiredItems = function(){
+      var expTasks = [];
+      items.$loaded().then(function() {
+        angular.forEach(items, function(item){
+          if(item.expiresAt > Date.now()) {
+            activeTasks.push(item);      
+          }    
+        })       
+      })    
+        return activeTasks;
+    }  
     
     return Item;
   

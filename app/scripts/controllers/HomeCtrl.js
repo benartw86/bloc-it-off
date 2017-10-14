@@ -1,9 +1,8 @@
 (function() {
     function HomeCtrl(Item) {
-      var ctrl = this; 
-      this.items = Item.all;
-      this.submit = function(name){
-        Item.add(name);      
+      this.items = Item.activeItems();
+      this.submit = function(name, priority){
+        Item.add(name, priority);      
       };    
         
       this.shouldShow = function(item) {
