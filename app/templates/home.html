@@ -1,10 +1,28 @@
 <div>
   <h1>Create your list!</h1>
-    <div class="todos">
-    <input type="text" ng-model="newMessage"/>
-    <button type="button" class="btn btn-default" ng-click="home.submit(newMessage)" ng-hide="item.complete">Create a new item!</button>
-    <div ng-repeat="item in home.items" ng-show="home.shouldShow(item)">  <!-- function in controller define behavior that can be used in the view here -->
-        <p >{{item.name}}</p>
-    </div>
-    </div>    
-</div>
+    <nav class="navbar">
+      <button type="button" class="btn btn-default"><a ui-sref="home">Items to do . . .</a></button>      
+      <button type="button" class="btn btn-default"><a ui-sref="past">Items finished . . . </a></button>  
+    </nav>    
+</div>    
+    
+<div class="todos">
+  <input type="text" ng-model="newMessage"/>
+    <fieldset>
+        <input type="radio" id="highValue" value="high" ng-model="priority"/>
+        <label for="lowValue">High</label>
+    </fieldset>
+    <fieldset>
+        <input type="radio" id="medValue" value="med" ng-model="priority"/>
+        <label for="lowValue">Medium</label>
+    </fieldset>
+    <fieldset>
+        <input type="radio" id="lowValue" value="low" ng-model="priority"/>
+        <label for="lowValue">Low</label>
+    </fieldset>
+    <button type="button" class="btn btn-default" ng-click="home.submit(newMessage, priority)">Create a new item!</button>
+  <div ng-repeat="item in home.items">  <!-- function in controller define behavior that can be used in the view here -->
+    <p >{{item.name}}-{{item.priority}}</p>
+  </div>
+</div>    
+

@@ -9,16 +9,29 @@
     //loop through array of items to check to see if they are expired  
     Item.all = items;
       
-    Item.add = function(item) {
+    Item.add = function(item, priority) {
       items.$add({
         name: item,
         createdAt: Date.now(),    
-        expiresAt: Date.now() + expirationTime         
+        expiresAt: Date.now() + expirationTime,
+        importance: priority
       });      
     }; 
       
     Item.expiredItems = function(){
       var expTasks = [];
+      items.$loaded().then(function() {
+        angular.forEach(items, function(item){
+          if(item.expiresAt < Date.now()) {
+            expTasks.push(item);      
+          }    
+        })       
+      })    
+        return expTasks;
+    }  
+    
+    Item.activeItems = function(){
+      var activeTasks = [];
       items.$loaded().then(function() {
         angular.forEach(items, function(item){
           if(item.expiresAt > Date.now()) {
